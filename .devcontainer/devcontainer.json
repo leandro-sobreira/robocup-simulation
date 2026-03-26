@@ -1,8 +1,15 @@
 {
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "name": "RoboCup Simulation",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
     "features": {
         "ghcr.io/bascodes/devcontainer-features/desktop:0": {}
+    },
+    "updateContentCommand": "sudo apt-get update && sudo apt-get install -y build-essential libboost-all-dev flex bison libaudio-dev libxt-dev libglib2.0-dev libqt5gui5 qtbase5-dev qt5-qmake wmctrl",
+    "postCreateCommand": "chmod +x start.sh",
+    "forwardPorts": [6080, 6000],
+    "customizations": {
+        "codespaces": {
+            "openFiles": ["start.sh"]
+        }
     }
 }
