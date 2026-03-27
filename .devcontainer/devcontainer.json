@@ -4,12 +4,13 @@
     "features": {
         "ghcr.io/bascodes/devcontainer-features/desktop:0": {}
     },
+    "remoteEnv": {
+        "INSTALL_DIR": "${containerWorkspaceFolder}/installs",
+        "PATH": "${containerWorkspaceFolder}/installs/bin:${containerEnv:PATH}",
+        "LD_LIBRARY_PATH": "${containerWorkspaceFolder}/installs/lib:${containerEnv:LD_LIBRARY_PATH}",
+        "CPATH": "${containerWorkspaceFolder}/installs/include:${containerEnv:CPATH}",
+        "LIBRARY_PATH": "${containerWorkspaceFolder}/installs/lib:${containerEnv:LIBRARY_PATH}"
+    },
     "updateContentCommand": "sudo apt-get update && sudo apt-get install -y build-essential libboost-all-dev flex bison libaudio-dev libxt-dev libglib2.0-dev libqt5gui5 qtbase5-dev qt5-qmake wmctrl",
-    "postCreateCommand": "chmod +x start.sh",
-    "forwardPorts": [6080, 6000],
-    "customizations": {
-        "codespaces": {
-            "openFiles": ["start.sh"]
-        }
-    }
+    "postStartCommand": "sudo /usr/local/share/desktop-init.sh"
 }
