@@ -1,0 +1,10 @@
+prefix=/workspaces/robocup-simulation/installs
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: librcsc
+Description: a base library for developing a RoboCup soccer simulation client
+Version: 2024
+Libs: -L${libdir} -lrcsc -lz -lm
+Cflags: -I${includedir}

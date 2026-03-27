@@ -11,6 +11,17 @@
         "CPATH": "${containerWorkspaceFolder}/installs/include:${containerEnv:CPATH}",
         "LIBRARY_PATH": "${containerWorkspaceFolder}/installs/lib:${containerEnv:LIBRARY_PATH}"
     },
-    "updateContentCommand": "sudo apt-get update && sudo apt-get install -y build-essential libboost-all-dev flex bison libaudio-dev libxt-dev libglib2.0-dev libqt5gui5 qtbase5-dev qt5-qmake wmctrl",
-    "postStartCommand": "sudo /usr/local/share/desktop-init.sh"
+    "updateContentCommand": "sudo apt-get update && sudo apt-get install -y x11vnc xvfb fluxbox novnc wmctrl build-essential libboost-all-dev flex bison libaudio-dev libxt-dev libglib2.0-dev libqt5gui5 qtbase5-dev qt5-qmake",
+    
+    // ESTA LINHA EXECUTA TODA VEZ QUE A MÁQUINA LIGA
+    "postStartCommand": "sudo /usr/local/share/desktop-init.sh",
+    
+    // Configurações para garantir que as portas fiquem visíveis
+    "forwardPorts": [6080],
+    "portsAttributes": {
+        "6080": {
+            "label": "Desktop Virtual",
+            "onAutoForward": "notify"
+        }
+    }
 }
