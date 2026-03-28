@@ -1,57 +1,109 @@
-# Robocup-simulation 2D
-###### Feito para o Github CodeSpace
-___
+# ⚽ RoboCup Simulation 2D
 
-## 1. Importe esse repositório
-Abra seu GitHub e vá em `Create new...`
-![alt text](readmeImgs/image.png)
+> Guia de configuração utilizando **GitHub Codespaces**
 
-Após isso clique em `Import repository`
-![alt text](readmeImgs/image-1.png)
+---
 
-Ou apenas [Clique aqui +](https://github.com/new/import)
+## 🚀 1. Importar o repositório
 
-Em `The URL for your source repository*` cole isso:
-```
+Acesse o GitHub e clique em **Create new...**
+
+<img src="readmeImgs/image.png" alt="Create new"/>
+
+Em seguida, selecione **Import repository**
+
+<img src="readmeImgs/image-1.png" alt="Import repository"/>
+
+> Ou acesse diretamente:  
+> 👉 https://github.com/new/import
+
+No campo **"The URL for your source repository"**, cole:
+
+```bash
 https://github.com/leandro-sobreira/robocup-simulation.git
 ```
-![alt text](readmeImgs/image-2.png)
+<p align="center">
+  <img src="readmeImgs/image-2.png" alt="Begin import" width="700"/>
+</p>
 
-Coloque o nome que deseja e clique em `Begin Import`
-![alt text](readmeImgs/image-3.png)
-Espere alguns poucos minutos até completar a importação
-___
-## 2. Crie um CodeSpace dentro do GitHub
+Depois:
 
-Após importar, entre dentro do seu repositório e clique em `<> Code` depois em `CodeSpaces`
-![alt text](readmeImgs/image-4.png)
+- Defina o nome do repositório
+- Clique em **Begin Import**
 
-Depois clique em `Create codespace on main`
-![alt text](readmeImgs/image-5.png)
-Agora seu codeSpace está sendo criado (Isso pode levar alguns minutos)
+<p align="center">
+  <img src="readmeImgs/image-3.png" alt="Begin import" width="700"/>
+</p>
 
-_**OBS.: Nessa configuração o CodeSpace irá funcionar por 60 horas mensais ou 90 horas com o [plano educacional](https://github.com/settings/education/benefits)**_
+⏳ Aguarde alguns minutos até a importação finalizar.
 
-___
-## 3. Comandos e pontos úteis
+---
 
-#### 1. Abrir interface gráfica (noVCL)
-Vá em `portas` e na porta 6080 clique em `Abrir no Navegador` 🌐
-![alt text](readmeImgs/image-6.png)
-Uma nova guia irá abrir onde iremos poder visualizar o rcssmonitor
+## 💻 2. Criar um Codespace
 
-#### 2. Rodar o `RcssServer` e `RcssMonitor`
-Digite na sequencia em diferentes terminais:
+Dentro do repositório importado:
+
+1. Clique em **<> Code**
+2. Vá até a aba **Codespaces**
+3. Clique em **Create codespace on main**
+
+<img src="readmeImgs/image-5.png" alt="Create codespace"/>
+
+⏳ O ambiente será criado automaticamente (pode levar alguns minutos).
+
+> ⚠️ **Limites de uso:**
+>
+> - Plano gratuito: **60h/mês**
+> - Plano educacional: **90h/mês**  
+> 👉 https://github.com/settings/education/benefits
+
+---
+
+## 🛠️ 3. Comandos e utilidades
+
+### 🌐 Abrir interface gráfica (noVNC)
+
+1. Vá até a aba **Ports**
+2. Localize a porta **6080**
+3. Clique em **Open in Browser**
+
+<p align="center">
+  <img src="readmeImgs/image-6.png" alt="noVNC port" width="700"/>
+</p>
+
+Uma nova aba será aberta com o uma interface gráfica (onde será aberto o **rcssmonitor** em breve)
+
+---
+
+### ⚙️ Rodar `rcssserver` e `rcssmonitor`
+
+Execute em **terminais separados**:
+
+```bash
+rcssserver
 ```
-rcsssserver
-```
-```
+
+```bash
 rcssmonitor
 ```
 
-#### 3. Testar com Helios-Base
-Digite em 2 terminais:
+---
+
+### 🤖 Testar com Helios Base
+
+Execute em **dois terminais diferentes**:
+
+```bash
+./helios-base/src/start.sh -t NomeDoTime
 ```
-./helios-base/src/start.sh -t NomeTime
-```
-_OBS.: Cada um dos times precisa ter um nome diferente_
+
+> ⚠️ Cada time deve possuir um nome diferente
+
+---
+
+## 📌 Observações
+
+- Certifique-se de que todos os serviços foram iniciados corretamente
+- Caso algo não funcione, reinicie o Codespace
+
+<h1 align="center">Agora é só programar, boa sorte!</h1>
